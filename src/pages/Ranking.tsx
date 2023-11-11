@@ -5,7 +5,7 @@ import PaymentDetail from "../components/report/PaymentDetail"
 const Ranking = () => {
   return (
     <div className="md:grid md:grid-cols-2 md:gap-2">
-      <div className="md:col-span-2">
+      <div className="md:col-span-2 sm:mb-3">
         <PaymentDetail />
       </div>
       <div className="sm:mb-3">

@@ -2,6 +2,7 @@ import { BadgeEuro, BarChart3, Home, Settings, ShieldHalf } from "lucide-react"
 import { ElementType, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
+import { Link } from "react-router-dom"
 import { twMerge } from "tailwind-merge"
 import symbol from "../assets/symbol.png"
 import useMediaQuery from "../hooks/useMediaQuery"
@@ -42,7 +43,9 @@ const Sidebar = () => {
           <p className="text-lg font-bold">EnPals</p>
         </a>
         <SmallSidebarItem Icon={Home} title="Dashboard" url="/" />
-        <SmallSidebarItem Icon={BarChart3} title="Reports" url="/reports" />
+        <SmallSidebarItem Icon={BarChart3} title="Reports" url="/report" />
+        <SmallSidebarItem Icon={ShieldHalf} title="Rankings" url="/ranking" />
+
         <SmallSidebarItem
           Icon={BadgeEuro}
           title="Subscriptions"
@@ -86,8 +89,8 @@ type SmallSidebarItemProps = {
 
 function SmallSidebarItem({ Icon, title, url }: SmallSidebarItemProps) {
   return (
-    <a
-      href={url}
+    <Link
+      to={url}
       className={twMerge(
         buttonStyles({ variant: "ghost" }),
         "py-4 px-1 flex flex-col items-center rounded-lg gap-1"
@@ -95,7 +98,7 @@ function SmallSidebarItem({ Icon, title, url }: SmallSidebarItemProps) {
     >
       <Icon className="w-6 h-6" />
       <div className="text-sm">{title}</div>
-    </a>
+    </Link>
   )
 }
 
@@ -112,9 +115,10 @@ function LargeSidebarItem({
   url,
   isActive,
 }: LargeSidebarItemProps) {
+  const
   return (
-    <a
-      href={url}
+    <Link
+      to={url}
       className={twMerge(
         buttonStyles({ variant: "ghost" }),
         `w-full flex items-center rounded-lg gap-4 p-3 hover:bg-primary ${
@@ -126,7 +130,7 @@ function LargeSidebarItem({
       <div className="text-sm whitespace-nowrap overflow-hidden text-ellipsis">
         {title}
       </div>
-    </a>
+    </Link>
   )
 }
 
