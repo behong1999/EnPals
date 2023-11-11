@@ -36,7 +36,7 @@ const Sidebar = () => {
         isSmallOpen ? "flex" : "hidden"
       }`}
       >
-        <a href="/" className="items-center justify-center flex my-8">
+        <a href="/" className="items-center justify-center flex py-3 pb-4">
           <img src={symbol} alt="youtube-symbol" className="h-10" />
           <p className="text-lg font-bold">EnPals</p>
         </a>

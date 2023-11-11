@@ -89,7 +89,7 @@ export function PageHeaderFirstSection({
       >
         <Menu />
       </Button>
-      <a href="#home" className="items-center justify-center hidden md:flex">
+      <a href="/" className="items-center justify-center hidden md:flex">
         <img src={symbol} alt="youtube-symbol" className="h-10" />
         <p className="text-lg font-bold">EnPals</p>
       </a>
