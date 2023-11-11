@@ -3,14 +3,14 @@ import {
   Route,
   BrowserRouter as Router,
   Routes,
-} from "react-router-dom"
+} from "react-router-dom";
 
-import Header from "./components/Header"
-import Sidebar from "./components/Sidebar"
-import Home from "./pages/Home"
-import Ranking from "./pages/Ranking"
-import Report from "./pages/Report"
-import Login from "./pages/auth/Login"
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import Ranking from "./pages/Ranking";
+import Report from "./pages/Report";
+import Login from "./pages/auth/Login";
+import Sidebar from "./components/Sidebar";
 
 const AppLayout = () => (
   <div className="max-h-screen flex flex-col">
@@ -22,7 +22,7 @@ const AppLayout = () => (
       </div>
     </div>
   </div>
-)
+);
 
 function App() {
   return (
@@ -36,7 +36,7 @@ function App() {
         </Route>
       </Routes>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

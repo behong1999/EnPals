@@ -1,33 +1,35 @@
-import { BadgeEuro, BarChart3, Home, Settings, ShieldHalf } from "lucide-react"
-import { ElementType, useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { BarChart3, Home, Settings, ShieldHalf } from "lucide-react";
+import { ElementType, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import { Link } from "react-router-dom"
-import { twMerge } from "tailwind-merge"
-import symbol from "../assets/symbol.png"
-import useMediaQuery from "../hooks/useMediaQuery"
-import { close } from "../reduxTookit/sidebarContext"
-import { buttonStyles } from "./Button"
+import { Link, useLocation } from "react-router-dom";
+import { twMerge } from "tailwind-merge";
+import symbol from "../assets/symbol.png";
+import useMediaQuery from "../hooks/useMediaQuery";
+import { close } from "../reduxTookit/sidebarContext";
+import { buttonStyles } from "./Button";
 
 interface RootState {
   sidebar: {
-    isSmallOpen: boolean
-  }
+    isSmallOpen: boolean;
+  };
 }
 
 const Sidebar = () => {
-  const { isSmallOpen } = useSelector((state: RootState) => state.sidebar)
-  const dispatch = useDispatch()
-  const isAboveMediumScreens = useMediaQuery("(min-width: 768px)")
+  // const location = useLocation();
+  // const pathName = location.pathname;
+  const { isSmallOpen } = useSelector((state: RootState) => state.sidebar);
+  const dispatch = useDispatch();
+  const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
 
   const handleClose = () => {
-    console.log("clicked")
-    dispatch(close())
-  }
+    console.log("clicked");
+    dispatch(close());
+  };
 
   useEffect(() => {
-    isAboveMediumScreens && dispatch(close())
-  }, [isAboveMediumScreens])
+    isAboveMediumScreens && dispatch(close());
+  }, [isAboveMediumScreens]);
 
   return (
     <>
@@ -38,20 +40,13 @@ const Sidebar = () => {
         isSmallOpen ? "flex" : "hidden"
       }`}
       >
-        <a href="/" className="items-center justify-center flex py-3 pb-4">
+        <Link to="/" className="items-center justify-center flex py-3 pb-4">
           <img src={symbol} alt="youtube-symbol" className="h-10" />
           <p className="text-lg font-bold">EnPals</p>
-        </a>
+        </Link>
         <SmallSidebarItem Icon={Home} title="Dashboard" url="/" />
         <SmallSidebarItem Icon={BarChart3} title="Reports" url="/report" />
         <SmallSidebarItem Icon={ShieldHalf} title="Rankings" url="/ranking" />
-
-        <SmallSidebarItem
-          Icon={BadgeEuro}
-          title="Subscriptions"
-          url="/subscriptions"
-        />
-        <SmallSidebarItem Icon={ShieldHalf} title="Payments" url="/payments" />
         <SmallSidebarItem Icon={Settings} title="Settings" url="/settings" />
       </aside>
       {isSmallOpen && (
@@ -66,64 +61,58 @@ const Sidebar = () => {
         className={`w-56 md:sticky md:flex hidden top-0 overflow-y-auto 
         scrollbar-hidden pb-4 flex-col gap-2`}
       >
-        <LargeSidebarItem isActive Icon={Home} title="Home" url="/" />
+        <LargeSidebarItem Icon={Home} title="Home" url="/" />
         <LargeSidebarItem Icon={BarChart3} title="Reports" url="/report" />
         <LargeSidebarItem Icon={ShieldHalf} title="Rankings" url="/ranking" />
-        <LargeSidebarItem
-          Icon={BadgeEuro}
-          title="Subscriptions"
-          url="/subscriptions"
-        />
-        <LargeSidebarItem Icon={ShieldHalf} title="Payments" url="/payments" />
         <LargeSidebarItem Icon={Settings} title="Settings" url="/settings" />
       </aside>
     </>
-  )
-}
+  );
+};
 
 type SmallSidebarItemProps = {
-  Icon: ElementType
-  title: string
-  url: string
-}
+  Icon: ElementType;
+  title: string;
+  url: string;
+};
 
 function SmallSidebarItem({ Icon, title, url }: SmallSidebarItemProps) {
+  const { pathname } = useLocation();
   return (
     <Link
       to={url}
       className={twMerge(
         buttonStyles({ variant: "ghost" }),
-        "py-4 px-1 flex flex-col items-center rounded-lg gap-1"
+        `py-4 px-1 flex flex-col items-center rounded-lg gap-1 ${
+          pathname.toLowerCase() === url.toLowerCase() &&
+          "font-bold bg-primary-100"
+        }`
       )}
     >
       <Icon className="w-6 h-6" />
       <div className="text-sm">{title}</div>
     </Link>
-  )
+  );
 }
 
 type LargeSidebarItemProps = {
-  Icon: ElementType
-  title: string
-  url: string
-  isActive?: boolean
-}
+  Icon: ElementType;
+  title: string;
+  url: string;
+};
 
-function LargeSidebarItem({
-  Icon,
-  title,
-  url,
-  isActive,
-}: LargeSidebarItemProps) {
-  const
+function LargeSidebarItem({ Icon, title, url }: LargeSidebarItemProps) {
+  const { pathname } = useLocation();
+
   return (
     <Link
       to={url}
       className={twMerge(
         buttonStyles({ variant: "ghost" }),
         `w-full flex items-center rounded-lg gap-4 p-3 hover:bg-primary ${
-          isActive ? "font-bold bg-primary-100 " : undefined
-        }`
+          pathname.toLowerCase() === url.toLowerCase() &&
+          "font-bold bg-primary-100"
+        } `
       )}
     >
       <Icon className="w-6 h-6" />
@@ -131,7 +120,7 @@ function LargeSidebarItem({
         {title}
       </div>
     </Link>
-  )
+  );
 }
 
-export default Sidebar
+export default Sidebar;
