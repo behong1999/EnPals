@@ -57,7 +57,7 @@ const Header = () => {
         >
           <Search />
         </Button>
-        <Button variant="ghost" size="icon">
+        <Button size="icon">
           <User />
         </Button>
       </div>

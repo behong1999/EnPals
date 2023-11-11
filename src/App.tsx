@@ -5,12 +5,12 @@ import {
   Routes,
 } from "react-router-dom"
 
-import Login from "./auth/Login"
 import Header from "./components/Header"
-import Sidebar from "./components/SideBar"
+import Sidebar from "./components/Sidebar"
 import Home from "./pages/Home"
 import Ranking from "./pages/Ranking"
 import Report from "./pages/Report"
+import Login from "./pages/auth/Login"
 
 const AppLayout = () => (
   <div className="max-h-screen flex flex-col">

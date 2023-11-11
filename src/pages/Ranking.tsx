@@ -4,11 +4,11 @@ import PaymentDetail from "../components/report/PaymentDetail"
 
 const Ranking = () => {
   return (
-    <div className="grid grid-cols-2 gap-2">
-      <div className="col-span-2">
+    <div className="md:grid md:grid-cols-2 md:gap-2">
+      <div className="md:col-span-2">
         <PaymentDetail />
       </div>
-      <div>
+      <div className="sm:mb-3">
         <PieChart
           title="Ranking percentages"
           labels={["Red", "Blue", "Yellow"]}
