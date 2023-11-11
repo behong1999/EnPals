@@ -3,8 +3,7 @@ import {
   HomeIcon,
   ChartBarIcon,
   UserIcon,
-  DocumentTextIcon,
-  UserCircleIcon,
+  Cog6ToothIcon,
 } from '@heroicons/react/24/outline';
 import { twMerge } from 'tailwind-merge';
 import { buttonStyles } from '../components/Button';
@@ -23,19 +22,14 @@ const sections = [
     url: '/reports',
   },
   {
-    title: 'Manage User',
+    title: 'Payments & Redeems',
     icon: UserIcon, // Replace with the appropriate icon
-    url: '/manage-users',
+    url: '/payment',
   },
   {
-    title: 'Generate Bill',
-    icon: DocumentTextIcon, // Replace with the appropriate icon
-    url: '/generate-bill',
-  },
-  {
-    title: 'Profile',
-    icon: UserCircleIcon, // Replace with the appropriate icon
-    url: '/profile',
+    title: 'Settings',
+    icon: Cog6ToothIcon, // Replace with the appropriate icon
+    url: '/settings',
   },
 ];
 
@@ -81,7 +75,5 @@ function SmallSidebarItem({ Icon, title, url }: SmallSidebarItemProps) {
     </a>
   );
 }
-
-
 
 export default Sidebar;
