@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Login from "./pages/auth/Login";
+import Report from "./pages/Report";
 
 const AppLayout = () => (
   <div className="max-h-screen flex flex-col">
