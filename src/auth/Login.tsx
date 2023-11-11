@@ -16,8 +16,17 @@ const login = () => {
       {/* login */}
       <form className="flex flex-col justify-center items-center m-8 md:w-[50%]">
         <div className="px-8 text-center mb-8 md:w-[60%] md:text-start">
-          <h2 className="text-2xl font-semibold">Login</h2>
-          <p className="text-sm">Login with Netbank!</p>
+          <h2 className="text-2xl font-semibold mb-2 px-4">Login</h2>
+          <div className="flex text-start">
+            <button
+              type="button"
+              className="w-full outline-none
+              border-b shadow-gray-100 shadow-inner shadow-secondary
+              py-1 text-sm text-[#82AA57] focus:border rounded-lg px-4 text-start"
+            >
+              Login with Netbank!
+            </button>
+          </div>
         </div>
         <div className="flex flex-col gap-4">
           <button
