@@ -22,7 +22,7 @@ const login = () => {
               type="button"
               className="w-full outline-none
               border-b shadow-gray-100 shadow-inner shadow-secondary
-              py-1 text-sm text-[#82AA57] focus:border rounded-lg px-4 text-start"
+              py-1 text-sm text-[#82AA57] focus:border-[#82AA57] focus:border rounded-lg px-4 text-start"
             >
               Login with Netbank!
             </button>
