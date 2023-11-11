@@ -1,44 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"
 
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
-import ReactPaginate from "react-paginate";
-import dummyData from "../../data/paymentUserData.json";
-
-// import axios from 'axios';
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
+import ReactPaginate from "react-paginate"
+import dummyData from "../../data/paymentUserData.json"
 
 interface Data {
-  id: number;
-  first_name: string;
-  address: string;
-  date: string;
-  amount: string;
+  id: number
+  first_name: string
+  address: string
+  date: string
+  amount: string
 }
 
 const PaymentDetail: React.FC = () => {
-  const [data, setData] = useState<Data[]>([]);
-  const [pageCount, setPageCount] = useState(0);
-  const [currentPage, setCurrentPage] = useState(0);
+  const [data, setData] = useState<Data[]>([])
+  const [pageCount, setPageCount] = useState(0)
+  const [currentPage, setCurrentPage] = useState(0)
 
   const handlePageClick = (selectedItem: { selected: number }) => {
-    setCurrentPage(selectedItem.selected);
-  };
+    setCurrentPage(selectedItem.selected)
+  }
 
   useEffect(() => {
-    setData(dummyData);
-    setPageCount(Math.ceil(dummyData.length / 10));
+    setData(dummyData)
+    setPageCount(Math.ceil(dummyData.length / 10))
+  }, [])
 
-    // axios
-    //   .get('https://your-api-url.com/data')
-    //   .then((response) => {
-    //     setData(response.data);
-    //     setPageCount(Math.ceil(response.data.length / 10));
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
-  }, []);
-
-  const offset = currentPage * 10;
+  const offset = currentPage * 10
 
   return (
     <div className="flex flex-col justify-center mt-2 border rounded-lg w-full overflow-x-scroll">
@@ -110,7 +98,7 @@ const PaymentDetail: React.FC = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PaymentDetail;
+export default PaymentDetail

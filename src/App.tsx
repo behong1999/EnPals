@@ -1,14 +1,16 @@
 import {
+  Outlet,
+  Route,
   BrowserRouter as Router,
   Routes,
-  Route,
-  Outlet,
-} from "react-router-dom";
-import Home from "./pages/Home";
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
-import Login from "./pages/auth/Login";
-import Report from "./pages/Report";
+} from "react-router-dom"
+
+import Header from "./components/Header"
+import Sidebar from "./components/Sidebar"
+import Home from "./pages/Home"
+import Ranking from "./pages/Ranking"
+import Report from "./pages/Report"
+import Login from "./pages/auth/Login"
 
 const AppLayout = () => (
   <div className="max-h-screen flex flex-col">
@@ -20,7 +22,7 @@ const AppLayout = () => (
       </div>
     </div>
   </div>
-);
+)
 
 function App() {
   return (
@@ -28,12 +30,13 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route element={<AppLayout />}>
+          <Route path="/ranking" element={<Ranking />} />
+          <Route path="/report" element={<Report />} />
           <Route path="/" element={<Home />} />
-          <Route path="/reports" element={<Report />} />
         </Route>
       </Routes>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
