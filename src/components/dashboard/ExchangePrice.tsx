@@ -1,18 +1,18 @@
-import { CalendarIcon } from "@heroicons/react/24/outline";
-import { CategoryScale } from "chart.js";
-import Chart from "chart.js/auto";
-import { Line } from "react-chartjs-2";
+import { CalendarIcon } from "@heroicons/react/24/outline"
+import { CategoryScale } from "chart.js"
+import Chart from "chart.js/auto"
+import { Line } from "react-chartjs-2"
 
-Chart.register(CategoryScale);
+Chart.register(CategoryScale)
 
 const PriceBox = ({
   additionalClassName,
   title,
   data,
 }: {
-  additionalClassName?: string;
-  title: string;
-  data: number;
+  additionalClassName?: string
+  title: string
+  data: number
 }) => {
   return (
     <div className={`${additionalClassName} bg-gray-200 rounded-md py-2 px-4`}>
@@ -21,8 +21,8 @@ const PriceBox = ({
         {data} c/kWh
       </p>
     </div>
-  );
-};
+  )
+}
 
 const ExchangePrice = () => {
   const data = {
@@ -37,7 +37,7 @@ const ExchangePrice = () => {
         borderColor: "#374725",
       },
     ],
-  };
+  }
 
   const options = {
     plugins: {
@@ -53,9 +53,9 @@ const ExchangePrice = () => {
         },
       },
     },
-    maintainAspectRatio: false, // Set this to false to adjust width and height directly
+    maintainAspectRatio: false,
     responsive: true,
-  };
+  }
 
   return (
     <div className="bg-gray-50 rounded-md w-full h-full py-4 px-8">
@@ -83,7 +83,7 @@ const ExchangePrice = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ExchangePrice;
+export default ExchangePrice
