@@ -5,7 +5,7 @@ const data = [
     address: "15040 Hollow Ridge Road",
     date: "11/14/2023",
     amount: 213.81,
-    status: "paid",
+    status: "Paid",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const data = [
     address: "4 Porter Center",
     date: "12/11/2023",
     amount: 230.34,
-    status: "paid",
+    status: "Paid",
   },
   {
     id: 3,
@@ -21,59 +21,56 @@ const data = [
     address: "641 Londonderry Trail",
     date: "12/17/2023",
     amount: 233.09,
-    status: "unpaid",
+    status: "Unpaid",
   },
-]
+];
 
 type HistoryRowProps = {
-  name: string
-  price: number
-  status: string
-}
+  name: string;
+  price: number;
+  status: string;
+};
 
 const HistoryRow = ({ name, price, status }: HistoryRowProps) => {
   return (
-    <tr className="grid grid-cols-[1fr_1fr_1fr] mb-2.5">
-      <td className="text-left">{name}</td>
-      <td className="text-center">${price}</td>
-      <td className="text-right">{status}</td>
+    <tr className="grid grid-cols-3 justify-items-start border-t px-4 py-2">
+      <td className="text-xs md:text-sm text-primary-700">{name}</td>
+      <td className="text-xs md:text-sm text-primary-700">${price}</td>
+      <td className="text-xs md:text-sm text-primary-700">{status}</td>
     </tr>
-  )
-}
+  );
+};
 
 const PaymentHistory = () => {
   return (
-    <div className="h-[357px] rounded-[20px]">
-      <header className="flex justify-between pt-[15px] pb-0 px-7">
-        <p className=" w-[30%] text-xl not-italic font-bold leading-8 tracking-[-0.4px]">
-          Payment history
-        </p>
-        <p
-          className="rounded-[70px] h-fit bg-[#f4f7fe] text-[#4f772d] text-center text-sm not-italic font-medium leading-6 tracking-[-0.28px] px-3 py-1 round-[70px]
-"
-        >
-          See all
-        </p>
+    <div className="rounded-lg border">
+      <header className="flex justify-between py-2 px-4">
+        <p className="font-bold text-base md:text-lg">Payment history</p>
       </header>
 
-      <table className="px-7 w-full text-[#4f772d] text-sm not-italic font-bold leading-6 tracking-[-0.28px] px-7 py-0">
-        <tr className="text-[color:var(--secondary-grey-600,#a3aed0)] text-sm not-italic font-medium leading-6 tracking-[-0.28px] grid grid-cols-[1fr_1fr_1fr] mb-2.5">
-          <td className="text-left">Name</td>
-          <td className="text-center">Price</td>
-          <td className="text-right">Status</td>
-        </tr>
-
-        {data.map((data) => (
-          <HistoryRow
-            // id={data.id}
-            name={data.first_name}
-            price={data.amount}
-            status={data.status}
-          />
-        ))}
-      </table>
+      <div className="w-full">
+        <table className="w-full text-gray-500 font-semibold py-2 px-4">
+          <thead>
+            <tr className="grid grid-cols-3 justify-items-start px-4">
+              <td className="text-sm md:text-base">Name</td>
+              <td className="text-sm md:text-base">Price</td>
+              <td className="text-sm md:text-base">Status</td>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((data) => (
+              <HistoryRow
+                // id={data.id}
+                name={data.first_name}
+                price={data.amount}
+                status={data.status}
+              />
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default PaymentHistory
+export default PaymentHistory;

@@ -41,26 +41,26 @@ const PaymentDetail: React.FC = () => {
   const offset = currentPage * 10
 
   return (
-    <div className="min-h-screen py-6 flex flex-col justify-center sm:py-12">
-      <div className="inline-flex py-3 sm:w-full sm:mx-auto">
-        <div className="px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
-          <div className="text-[24px] font-bold mb-5">Payment Details</div>
+    <div className="flex flex-col justify-center mt-2 border rounded-lg w-full overflow-x-scroll">
+      <div className="relative py-3">
+        <div className="relative px-4 bg-white">
+          <div className="text-2xl font-bold mb-5 px-4">Payment Details</div>
           <table className="min-w-full table-auto">
             <thead>
               <tr>
-                <th className="w-1/5 px-4 py-2 text-base font-semibold tracking-wide text-gray-400 uppercase border-b">
+                <th className="w-1/5 text-start px-4 py-2 text-sm md:text-base font-semibold tracking-wide text-gray-600 uppercase border-b">
                   Name
                 </th>
-                <th className="w-1/5 px-4 py-2 text-base font-semibold tracking-wide text-gray-400 uppercase border-b">
+                <th className="w-1/5 text-start px-4 py-2 text-sm md:text-base font-semibold tracking-wide text-gray-600 uppercase border-b">
                   Address
                 </th>
-                <th className="w-1/5 px-4 py-2 text-base font-semibold tracking-wide text-gray-400 uppercase border-b">
+                <th className="w-1/5 text-start px-4 py-2 text-sm md:text-base font-semibold tracking-wide text-gray-600 uppercase border-b">
                   Due Date
                 </th>
-                <th className="w-1/5 px-4 py-2 text-base font-semibold tracking-wide text-gray-400 uppercase border-b">
+                <th className="w-1/5 text-start px-4 py-2 text-sm md:text-base font-semibold tracking-wide text-gray-600 uppercase border-b">
                   Amount
                 </th>
-                <th className="w-1/5 px-4 py-2 text-base font-semibold tracking-wide text-gray-400 uppercase border-b">
+                <th className="w-1/5 text-start px-4 py-2 text-sm md:text-base font-semibold tracking-wide text-gray-600 uppercase border-b">
                   Payment
                 </th>
               </tr>
@@ -68,19 +68,19 @@ const PaymentDetail: React.FC = () => {
             <tbody className="divide-y divide-gray-200">
               {data.slice(offset, offset + 10).map((item, index) => (
                 <tr key={index}>
-                  <td className="font-bold px-4 py-2 text-hunter_green">
+                  <td className="font-bold text-xs md:text-sm px-4 py-2 text-primary-800">
                     {item.first_name}
                   </td>
-                  <td className="font-bold px-4 py-2 text-hunter_green">
+                  <td className="font-bold text-xs md:text-sm px-4 py-2 text-primary-800">
                     {item.address}
                   </td>
-                  <td className="font-bold px-4 py-2 text-hunter_green">
+                  <td className="font-bold text-xs md:text-sm px-4 py-2 text-primary-800">
                     {item.date}
                   </td>
-                  <td className="font-bold px-4 py-2 text-hunter_green">
+                  <td className="font-bold text-xs md:text-sm px-4 py-2 text-primary-800">
                     {item.amount}
                   </td>
-                  <td className="font-bold px-4 py-2 text-hunter_green">
+                  <td className="font-bold text-xs md:text-sm px-4 py-2 text-primary-800">
                     <div>
                       <ArrowTopRightOnSquareIcon className="w-[24px] " />
                     </div>
@@ -93,15 +93,19 @@ const PaymentDetail: React.FC = () => {
             previousLabel={"← Previous"}
             nextLabel={"Next →"}
             pageCount={pageCount}
-            pageClassName="mx-2"
+            pageClassName="text-primary-700 mx-2"
             onPageChange={handlePageClick}
-            containerClassName={"flex justify-center items-center my-4"}
+            containerClassName={"flex justify-start items-center my-4"}
             previousLinkClassName={
-              "mx-2 bg-gray-600 px-4 py-2 rounded text-white"
+              "px-4 py-2 rounded-lg font-bold text-primary-700 bg-gray-200 hover:bg-primary-700 hover:text-gray-100"
             }
-            nextLinkClassName={"mx-2 bg-gray-600 px-4 py-2 rounded text-white"}
+            nextLinkClassName={
+              "px-4 py-2 rounded-lg font-bold text-primary-700 bg-gray-200 hover:bg-primary-700 hover:text-gray-100"
+            }
             disabledClassName={"px-4 py-2 rounded text-gray-500"}
-            activeClassName={"bg-blue-500 px-4 py-2 rounded text-white"}
+            activeClassName={
+              "text-primary-700 bg-gray-200 px-4 py-2 rounded-lg font-bold"
+            }
           />
         </div>
       </div>

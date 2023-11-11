@@ -1,8 +1,8 @@
-import { CategoryScale } from "chart.js"
-import Chart from "chart.js/auto"
-import { Bar } from "react-chartjs-2"
+import { CategoryScale } from "chart.js";
+import Chart from "chart.js/auto";
+import { Bar } from "react-chartjs-2";
 
-Chart.register(CategoryScale)
+Chart.register(CategoryScale);
 
 const ConsumptionHistory = () => {
   const data = {
@@ -17,7 +17,7 @@ const ConsumptionHistory = () => {
         minBarLength: 2,
       },
     ],
-  }
+  };
 
   const options = {
     scales: {
@@ -37,10 +37,10 @@ const ConsumptionHistory = () => {
     },
     maintainAspectRatio: false, // Set this to false to adjust width and height directly
     responsive: true,
-  }
+  };
 
   return (
-    <div className=" bg-gray-50 rounded-md p-5">
+    <div className=" bg-gray-50 w-full rounded-md p-5">
       <div className="flex flex-row justify-between w-full">
         <h1 className="font-bold text-base text-primary-900">
           Yearly Consumption History
@@ -52,7 +52,7 @@ const ConsumptionHistory = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ConsumptionHistory
+export default ConsumptionHistory;
