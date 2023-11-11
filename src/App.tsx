@@ -1,11 +1,10 @@
 import './App.css';
+import Sidebar from './layouts/SideBar';
 
 function App() {
-  return (
-    <h1 className='text-3xl font-bold underline text-dark_green-800'>
-      Hello world!
-    </h1>
-  );
+  return <>
+  <Sidebar></Sidebar>
+  </>
 }
 
 export default App;
