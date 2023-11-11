@@ -1,4 +1,4 @@
-import PieChart from "../PieChart"
+import PieChart from "../PieChart";
 
 const EnergyResourcesChart = () => {
   return (
@@ -13,7 +13,7 @@ const EnergyResourcesChart = () => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default EnergyResourcesChart
+export default EnergyResourcesChart;

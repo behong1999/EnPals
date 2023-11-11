@@ -1,30 +1,28 @@
-import { CalendarIcon } from "@heroicons/react/24/outline"
-import { CategoryScale } from "chart.js"
-import Chart from "chart.js/auto"
-import { Line } from "react-chartjs-2"
+import { CalendarIcon } from "@heroicons/react/24/outline";
+import { CategoryScale } from "chart.js";
+import Chart from "chart.js/auto";
+import { Line } from "react-chartjs-2";
 
-Chart.register(CategoryScale)
+Chart.register(CategoryScale);
 
 const PriceBox = ({
   additionalClassName,
   title,
   data,
 }: {
-  additionalClassName?: string
-  title: string
-  data: number
+  additionalClassName?: string;
+  title: string;
+  data: number;
 }) => {
   return (
-    <div
-      className={`${additionalClassName} bg-gray-100 round-md py-2 px-1 h-fit`}
-    >
+    <div className={`${additionalClassName} bg-gray-200 rounded-md py-2 px-4`}>
       <p className="font-bold	text-xs text-primary-900 text-center">{title}</p>
-      <p className="font-bold text-lg text-primary-400 text-center break-keep">
+      <p className="font-bold text-sm text-primary-700 text-center break-keep">
         {data} c/kWh
       </p>
     </div>
-  )
-}
+  );
+};
 
 const ExchangePrice = () => {
   const data = {
@@ -39,7 +37,7 @@ const ExchangePrice = () => {
         borderColor: "#374725",
       },
     ],
-  }
+  };
 
   const options = {
     plugins: {
@@ -55,11 +53,13 @@ const ExchangePrice = () => {
         },
       },
     },
-  }
+    maintainAspectRatio: false, // Set this to false to adjust width and height directly
+    responsive: true,
+  };
 
   return (
-    <div className="bg-gray-50 rounded-md p-5 w-full">
-      <div className="flex flex-row justify-between w-full">
+    <div className="bg-gray-50 rounded-md w-full h-full py-4 px-8">
+      <div className="flex items-center justify-between w-full">
         <h1 className="font-bold text-base text-primary-900">
           Exchange Price of Electricity
         </h1>
@@ -68,8 +68,8 @@ const ExchangePrice = () => {
           <p className="font-bold	text-sm ml-2">Today</p>
         </div>
       </div>
-      <div className="flex flex-row pt-2 w-full">
-        <div className="grid grid-cols-2 gap-2 w-4/12 h-fit">
+      <div className="flex flex-col pt-2 w-full gap-8">
+        <div className="flex gap-2 justify-between h-full w-full">
           <PriceBox
             additionalClassName="col-span-2"
             title="Price Now"
@@ -78,12 +78,12 @@ const ExchangePrice = () => {
           <PriceBox title="Lowest" data={1.0} />
           <PriceBox title="Highest" data={4.0} />
         </div>
-        <div className="ml-3 w-8/12">
+        <div className="w-full h-full m-auto rounded-lg">
           <Line data={data} options={options} />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ExchangePrice
+export default ExchangePrice;
