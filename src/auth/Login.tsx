@@ -22,7 +22,7 @@ const login = () => {
               type="button"
               className="w-full outline-none
               border-b shadow-gray-100 shadow-inner shadow-secondary
-              py-1 text-sm text-[#82AA57] focus:border-[#82AA57] focus:border rounded-lg px-4 text-start"
+              py-1 text-sm text-primary focus:border-primary focus:border rounded-lg px-4 text-start"
             >
               Login with Netbank!
             </button>
@@ -31,13 +31,13 @@ const login = () => {
         <div className="flex flex-col gap-4">
           <button
             type="submit"
-            className="border rounded-xl py-2 px-4 bg-[#82AA57] text-sm text-gray-100 font-semibold"
+            className="border rounded-xl py-2 px-4 bg-primary text-sm text-gray-100 font-semibold"
           >
             Sign In
           </button>
           <button
             type="submit"
-            className="border rounded-xl py-2 px-4 bg-[#82AA57] text-sm text-gray-100 font-semibold"
+            className="border rounded-xl py-2 px-4 bg-primary text-sm text-gray-100 font-semibold"
           >
             Demo User
           </button>
