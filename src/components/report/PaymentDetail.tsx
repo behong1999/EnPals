@@ -4,8 +4,6 @@ import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
 import ReactPaginate from "react-paginate"
 import dummyData from "../../data/paymentUserData.json"
 
-// import axios from 'axios';
-
 interface Data {
   id: number
   first_name: string
@@ -26,16 +24,6 @@ const PaymentDetail: React.FC = () => {
   useEffect(() => {
     setData(dummyData)
     setPageCount(Math.ceil(dummyData.length / 10))
-
-    // axios
-    //   .get('https://your-api-url.com/data')
-    //   .then((response) => {
-    //     setData(response.data);
-    //     setPageCount(Math.ceil(response.data.length / 10));
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
   }, [])
 
   const offset = currentPage * 10
