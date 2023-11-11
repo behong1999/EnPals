@@ -1,45 +1,35 @@
-import React from 'react';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
+import { ArcElement, Chart as ChartJS, Legend, Tooltip } from "chart.js"
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+import React from "react"
+import { Pie } from "react-chartjs-2"
+
+ChartJS.register(ArcElement, Tooltip, Legend)
 
 interface PieChartProps {
-  labels: string[];
-  data: number[];
+  labels: string[]
+  data: number[]
 }
 
 const pieChartData = {
-  labels: ['Red', 'Blue', 'Yellow'],
+  labels: ["Red", "Blue", "Yellow"],
   data: [12, 19, 3],
-};
+}
 
 const PieChart: React.FC<PieChartProps> = ({ labels, data }) => {
   const chartData = {
     labels,
     datasets: [
       {
-        label: '# of Votes',
+        label: "# of Votes",
         data,
-        backgroundColor: [
-          '#90A955',
-          '#31572C',
-          '#4F772D',
-        ],
+        backgroundColor: ["#90A955", "#31572C", "#4F772D"],
         borderWidth: 1,
-        
       },
     ],
-  };
+  }
 
-  
+  return <Pie data={chartData} />
+}
 
-  return (
-    <div className="w-full max-w-md mx-auto mt-6">
-      <Pie data={chartData} />
-    </div>
-  );
-};
-
-export default PieChart;
-export { pieChartData };
+export default PieChart
+export { pieChartData }

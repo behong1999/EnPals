@@ -58,12 +58,12 @@ const ExchangePrice = () => {
   }
 
   return (
-    <div className="bg-gray-50 rounded-md p-5 w-1/2">
+    <div className="bg-gray-50 rounded-md p-5 w-full">
       <div className="flex flex-row justify-between w-full">
         <h1 className="font-bold text-base text-primary-900">
           Exchange Price of Electricity
         </h1>
-        <div className="bg-gray-100 rounded-md p-2.5 flex flex-row justify-center">
+        <div className="bg-gray-100 rounded-md p-2.5 flex flex-row justify-center text-primary-900">
           <CalendarIcon className="w-4 h-4" />
           <p className="font-bold	text-sm ml-2">Today</p>
         </div>

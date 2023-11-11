@@ -30,13 +30,13 @@ const contentData = [
 
 const UserSummary = () => {
   return (
-    <div className="flex flex-row justify-between w-full space-x-4 p-2">
+    <div className="flex flex-row justify-between w-full lg:space-x-4 md:space-x-2 p-2">
       {contentData.map((data) => (
         <div
           key={data.title}
           className="flex flex-row content-center bg-gray-50 w-3/12 rounded-md p-3"
         >
-          <div className="bg-gray-100 w-12 h-12 rounded-full p-3">
+          <div className="bg-gray-100 w-12 h-12 rounded-full p-3 text-primary-900">
             {data.icon}
           </div>
           <div className="ml-3">
