@@ -5,9 +5,9 @@ import {
   Outlet,
 } from "react-router-dom";
 import Home from "./pages/Home";
-import Login from "./auth/Login";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
+import Login from "./pages/auth/Login";
 
 const AppLayout = () => (
   <div className="max-h-screen flex flex-col">
