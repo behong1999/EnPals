@@ -34,7 +34,7 @@ const GeneralRankingTable = () => {
               >
                 <td className="px-6 py-3">{family.name}</td>
                 <td className="px-6 py-3">
-                  {convertToEuros(family.last_usage)}e/{family.last_usage} kWh
+                  {convertToEuros(family.last_usage)}e/{family.last_usage}
                 </td>
                 <td className="px-6 py-3">{convertToEuros(family.saving)}</td>
                 <td className="px-6 py-3">#{index + 1}</td>
