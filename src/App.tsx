@@ -27,6 +27,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route element={<AppLayout />}>
+          <Route path="/reports" element={<Report />} />
           <Route path="/" element={<Home />} />
         </Route>
       </Routes>
