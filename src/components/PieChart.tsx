@@ -6,16 +6,12 @@ import { Pie } from "react-chartjs-2"
 ChartJS.register(ArcElement, Tooltip, Legend)
 
 interface PieChartProps {
+  title: string
   labels: string[]
   data: number[]
 }
 
-const pieChartData = {
-  labels: ["Red", "Blue", "Yellow"],
-  data: [12, 19, 3],
-}
-
-const PieChart: React.FC<PieChartProps> = ({ labels, data }) => {
+const PieChart: React.FC<PieChartProps> = ({ title, labels, data }) => {
   const chartData = {
     labels,
     datasets: [
@@ -28,8 +24,14 @@ const PieChart: React.FC<PieChartProps> = ({ labels, data }) => {
     ],
   }
 
-  return <Pie data={chartData} />
+  return (
+    <div className="bg-gray-50 rounded-md p-5 w-full">
+      <h1 className="font-bold text-base text-primary-900">{title}</h1>
+      <div className="w-full max-w-md h-96 mx-auto mt-6">
+        <Pie data={chartData} />
+      </div>
+    </div>
+  )
 }
 
 export default PieChart
-export { pieChartData }

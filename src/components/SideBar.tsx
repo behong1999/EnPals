@@ -1,31 +1,32 @@
-import { BadgeEuro, BarChart3, Home, Settings, ShieldHalf } from "lucide-react";
-import { ElementType, useEffect } from "react";
-import { buttonStyles } from "./Button";
-import { twMerge } from "tailwind-merge";
-import { useDispatch, useSelector } from "react-redux";
-import { close } from "../reduxTookit/sidebarContext";
-import useMediaQuery from "../hooks/useMediaQuery";
-import symbol from "../assets/symbol.png";
+import { BadgeEuro, BarChart3, Home, Settings, ShieldHalf } from "lucide-react"
+import { ElementType, useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+
+import { twMerge } from "tailwind-merge"
+import symbol from "../assets/symbol.png"
+import useMediaQuery from "../hooks/useMediaQuery"
+import { close } from "../reduxTookit/sidebarContext"
+import { buttonStyles } from "./Button"
 
 interface RootState {
   sidebar: {
-    isSmallOpen: boolean;
-  };
+    isSmallOpen: boolean
+  }
 }
 
 const Sidebar = () => {
-  const { isSmallOpen } = useSelector((state: RootState) => state.sidebar);
-  const dispatch = useDispatch();
-  const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
+  const { isSmallOpen } = useSelector((state: RootState) => state.sidebar)
+  const dispatch = useDispatch()
+  const isAboveMediumScreens = useMediaQuery("(min-width: 768px)")
 
   const handleClose = () => {
-    console.log("clicked");
-    dispatch(close());
-  };
+    console.log("clicked")
+    dispatch(close())
+  }
 
   useEffect(() => {
-    isAboveMediumScreens && dispatch(close());
-  }, [isAboveMediumScreens]);
+    isAboveMediumScreens && dispatch(close())
+  }, [isAboveMediumScreens])
 
   return (
     <>
@@ -63,7 +64,8 @@ const Sidebar = () => {
         scrollbar-hidden pb-4 flex-col gap-2`}
       >
         <LargeSidebarItem isActive Icon={Home} title="Home" url="/" />
-        <LargeSidebarItem Icon={BarChart3} title="Reports" url="/reports" />
+        <LargeSidebarItem Icon={BarChart3} title="Reports" url="/report" />
+        <LargeSidebarItem Icon={ShieldHalf} title="Rankings" url="/ranking" />
         <LargeSidebarItem
           Icon={BadgeEuro}
           title="Subscriptions"
@@ -73,14 +75,14 @@ const Sidebar = () => {
         <LargeSidebarItem Icon={Settings} title="Settings" url="/settings" />
       </aside>
     </>
-  );
-};
+  )
+}
 
 type SmallSidebarItemProps = {
-  Icon: ElementType;
-  title: string;
-  url: string;
-};
+  Icon: ElementType
+  title: string
+  url: string
+}
 
 function SmallSidebarItem({ Icon, title, url }: SmallSidebarItemProps) {
   return (
@@ -94,15 +96,15 @@ function SmallSidebarItem({ Icon, title, url }: SmallSidebarItemProps) {
       <Icon className="w-6 h-6" />
       <div className="text-sm">{title}</div>
     </a>
-  );
+  )
 }
 
 type LargeSidebarItemProps = {
-  Icon: ElementType;
-  title: string;
-  url: string;
-  isActive?: boolean;
-};
+  Icon: ElementType
+  title: string
+  url: string
+  isActive?: boolean
+}
 
 function LargeSidebarItem({
   Icon,
@@ -125,7 +127,7 @@ function LargeSidebarItem({
         {title}
       </div>
     </a>
-  );
+  )
 }
 
-export default Sidebar;
+export default Sidebar

@@ -9,6 +9,7 @@ import Login from "./auth/Login"
 import Header from "./components/Header"
 import Sidebar from "./components/SideBar"
 import Home from "./pages/Home"
+import Ranking from "./pages/Ranking"
 import Report from "./pages/Report"
 
 const AppLayout = () => (
@@ -29,7 +30,8 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route element={<AppLayout />}>
-          <Route path="/reports" element={<Report />} />
+          <Route path="/ranking" element={<Ranking />} />
+          <Route path="/report" element={<Report />} />
           <Route path="/" element={<Home />} />
         </Route>
       </Routes>

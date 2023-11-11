@@ -42,8 +42,8 @@ const PaymentDetail: React.FC = () => {
 
   return (
     <div className="min-h-screen py-6 flex flex-col justify-center sm:py-12">
-      <div className="relative inline-flex py-3 sm:w-full sm:mx-auto">
-        <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+      <div className="inline-flex py-3 sm:w-full sm:mx-auto">
+        <div className="px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
           <div className="text-[24px] font-bold mb-5">Payment Details</div>
           <table className="min-w-full table-auto">
             <thead>

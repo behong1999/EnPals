@@ -1,7 +1,7 @@
-import EnergyResourcesChart from "../components/dashboard/EnergyResourcesChart";
-import ExchangePrice from "../components/dashboard/ExchangePrice";
-import GeneralRankingTable from "../components/dashboard/GeneralRankingTable";
-import UserSummary from "../components/dashboard/UserSummary";
+import PieChart from "../components/PieChart"
+import ExchangePrice from "../components/dashboard/ExchangePrice"
+import GeneralRankingTable from "../components/dashboard/GeneralRankingTable"
+import UserSummary from "../components/dashboard/UserSummary"
 
 export default function Home() {
   return (
@@ -13,11 +13,15 @@ export default function Home() {
         <ExchangePrice />
       </div>
       <div className="col-span-2 lg:col-span-1">
-        <EnergyResourcesChart />
+        <PieChart
+          title="Where does your electricity come from ?"
+          labels={["Solar Energy", "Wind Energy", "Other"]}
+          data={[68, 23, 9]}
+        />
       </div>
       <div className="col-span-2">
         <GeneralRankingTable />
       </div>
     </div>
-  );
+  )
 }
