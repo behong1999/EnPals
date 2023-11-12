@@ -3,7 +3,7 @@
 
 <h4>This project was created in order to confront the challenge given by Aalto University within a hackathon held by Junction 2023</h4>
 
-Problem Story: In Finland and across Europe, the need for dependable and sustainable energy solutions has never been more urgent than ever. Our MooMoo team introduces a pivotal solution. Positioned as a user-friendly intermediary between consumers and electricity providers, our platform revolutionises energy conservation by offering a platform built in React:
+Problem Story: In Finland and across Europe, the need for dependable and sustainable energy solutions has never been more urgent than ever. Our MooMoo team introduces a pivotal solution. Positioned as a user-friendly intermediary between consumers and electricity providers, our platform revolutionizes energy conservation by offering a platform built in React:
 
 - Real-time Monitoring: Users access a comprehensive dashboard providing insights into electricity usage patterns, spot prices, and predictions for informed energy decisions.
 
