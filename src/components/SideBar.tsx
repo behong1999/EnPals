@@ -35,7 +35,7 @@ const Sidebar = () => {
     <>
       {/* small screen */}
       <aside
-        className={`fixed z-[9999] md:hidden top-0 bg-primary-50 h-screen text-gray-800 left-0 overflow-y-auto 
+        className={`fixed w-2/6 z-[9999] md:hidden top-0 bg-primary-50 h-screen text-gray-800 left-0 overflow-y-auto 
       scrollbar-hidden pb-4 px-2 flex-col items-center ${
         isSmallOpen ? "flex" : "hidden"
       }`}
@@ -83,7 +83,7 @@ function SmallSidebarItem({ Icon, title, url }: SmallSidebarItemProps) {
       to={url}
       className={twMerge(
         buttonStyles({ variant: "ghost" }),
-        `py-4 px-1 flex flex-col items-center rounded-lg gap-1 ${
+        `my-2 px-1 w-full flex flex-col items-center rounded-lg gap-1 ${
           pathname.toLowerCase() === url.toLowerCase() &&
           "font-bold bg-primary-100"
         }`

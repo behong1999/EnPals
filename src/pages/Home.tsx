@@ -1,11 +1,14 @@
-import PieChart from "../components/PieChart"
-import ExchangePrice from "../components/dashboard/ExchangePrice"
-import GeneralRankingTable from "../components/dashboard/GeneralRankingTable"
-import UserSummary from "../components/dashboard/UserSummary"
+import PieChart from "../components/PieChart";
+import ExchangePrice from "../components/dashboard/ExchangePrice";
+import GeneralRankingTable from "../components/dashboard/GeneralRankingTable";
+import UserSummary from "../components/dashboard/UserSummary";
 
 export default function Home() {
   return (
-    <div className="grid grid-cols-2 gap-4">
+    <div className="grid grid-cols-2 gap-4 pb-8">
+      <h1 className="text-2xl md:text-3xl font-bold text-gray-800">
+        Dashboard
+      </h1>
       <div className="col-span-2">
         <UserSummary />
       </div>
@@ -23,5 +26,5 @@ export default function Home() {
         <GeneralRankingTable />
       </div>
     </div>
-  )
+  );
 }

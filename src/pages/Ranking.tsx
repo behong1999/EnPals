@@ -1,25 +1,26 @@
-import PieChart from "../components/PieChart"
-import OfferList from "../components/ranking/OfferList"
-import PaymentDetail from "../components/report/PaymentDetail"
+import PieChart from "../components/PieChart";
+import OfferList from "../components/ranking/OfferList";
+import UserDetails from "../components/ranking/UserDetails";
 
 const Ranking = () => {
   return (
-    <div className="md:grid md:grid-cols-2 md:gap-2">
-      <div className="md:col-span-2 sm:mb-3">
-        <PaymentDetail />
+    <div className="grid grid-cols-2 gap-4 pb-8">
+      <h1 className="text-2xl md:text-3xl font-bold text-gray-800">Rankings</h1>
+      <div className="col-span-2">
+        <UserDetails />
       </div>
-      <div className="sm:mb-3">
+      <div className="col-span-2">
         <PieChart
           title="Ranking percentages"
           labels={["Red", "Blue", "Yellow"]}
           data={[12, 19, 3]}
         />
       </div>
-      <div>
+      <div className="col-span-2">
         <OfferList />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Ranking
+export default Ranking;
