@@ -76,18 +76,18 @@ const UserDetails: React.FC = () => {
             </tbody>
           </table>
           <ReactPaginate
-            previousLabel={"← Previous"}
-            nextLabel={"Next →"}
+            previousLabel={"←"}
+            nextLabel={"→"}
             pageCount={pageCount}
-            pageClassName="text-primary-700 mx-2"
+            pageClassName="text-primary-700"
             onPageChange={handlePageClick}
-            containerClassName={"flex justify-start items-center my-4"}
-            previousLinkClassName={
-              "px-4 py-2 rounded-lg font-bold text-primary-700 bg-gray-200 hover:bg-primary-700 hover:text-gray-100"
-            }
-            nextLinkClassName={
-              "px-4 py-2 rounded-lg font-bold text-primary-700 bg-gray-200 hover:bg-primary-700 hover:text-gray-100"
-            }
+            containerClassName={"flex justify-start items-center my-4 gap-4"}
+            previousLinkClassName={`px-4 py-2 rounded-lg font-bold text-primary-700 bg-gray-200 hover:bg-primary-700 hover:text-gray-100 ${
+              currentPage === 0 && "hidden"
+            }`}
+            nextLinkClassName={`px-4 py-2 rounded-lg font-bold text-primary-700 bg-gray-200 hover:bg-primary-700 hover:text-gray-100 ${
+              currentPage === pageCount - 1 && "hidden"
+            }`}
             disabledClassName={"px-4 py-2 rounded text-gray-500"}
             activeClassName={
               "text-primary-700 bg-gray-200 px-4 py-2 rounded-lg font-bold"
